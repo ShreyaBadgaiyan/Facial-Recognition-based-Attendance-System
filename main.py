@@ -2,6 +2,7 @@ from tkinter import*
 from tkinter import ttk
 from PIL import Image,ImageTk
 from student import Student
+import os
 
 
 class Face_Recognition_System:
@@ -115,10 +116,10 @@ class Face_Recognition_System:
         img9=img9.resize((220,220),Image.LANCZOS)
         self.photoimg9=ImageTk.PhotoImage(img9)
 
-        b1=Button(bgimg,image=self.photoimg9,cursor="hand2")  
+        b1=Button(bgimg,image=self.photoimg9,cursor="hand2",command=self.open_img)  
         b1.place(x=500,y=380,width=220,height=220)
 
-        b1=Button(bgimg,text="Photos",cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")  
+        b1=Button(bgimg,text="Photos",cursor="hand2",command=self.open_img,font=("times new roman",15,"bold"),bg="darkblue",fg="white")  
         b1.place(x=500,y=580,width=220,height=40)
 
         #Developer button
@@ -144,7 +145,9 @@ class Face_Recognition_System:
 
         b1=Button(bgimg,text="Exit",cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")  
         b1.place(x=1100,y=580,width=220,height=40)
-
+    
+    def open_img(self):
+        os.startfile("data")
 # ===================Function buttons===================
 
     def student_details(self):
