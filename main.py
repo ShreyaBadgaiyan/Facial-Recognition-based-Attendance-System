@@ -4,6 +4,7 @@ from PIL import Image,ImageTk
 from student import Student
 import os
 from train import Train
+from face_recognise import Face_Recognition
 
 
 class Face_Recognition_System:
@@ -69,10 +70,10 @@ class Face_Recognition_System:
         img5=img5.resize((220,220),Image.LANCZOS)
         self.photoimg5=ImageTk.PhotoImage(img5)
 
-        b1=Button(bgimg,image=self.photoimg5,cursor="hand2")  
+        b1=Button(bgimg,image=self.photoimg5,cursor="hand2",command=self.face_data)  
         b1.place(x=500,y=100,width=220,height=220)
 
-        b1=Button(bgimg,text="Face Detector",cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")  
+        b1=Button(bgimg,text="Face Detector",command=self.face_data,cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")  
         b1.place(x=500,y=300,width=220,height=40)
 
 #attendance face button
@@ -158,6 +159,10 @@ class Face_Recognition_System:
     def train_data(self):
         self.new_window=Toplevel(self.root)
         self.app=Train(self.new_window)
+
+    def face_data(self):
+        self.new_window=Toplevel(self.root)
+        self.app=Face_Recognition(self.new_window)
     
 if __name__=="__main__":
     root=Tk()

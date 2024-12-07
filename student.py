@@ -233,7 +233,7 @@ class Student:
         save_btn=Button(btn_frame,text="Save",command=self.add_data,width=17,font=("times new roman",13,"bold"),bg="blue",fg="white")
         save_btn.grid(row=0,column=0)
 
-     #    update_btn=Button(btn_frame,text="Update",width=17,font=("times new roman",13,"bold"),bg="blue",fg="white")
+       #update_btn=Button(btn_frame,text="Update",width=17,font=("times new roman",13,"bold"),bg="blue",fg="white")
         update_btn = Button(btn_frame,text="Update",bg="Blue",fg="White",width=17,command=self.update_data,font=("times new roman",12,"bold" ))
         update_btn.grid(row=0,column=1)
 
